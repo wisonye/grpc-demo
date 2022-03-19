@@ -1,3 +1,4 @@
+#![allow(warnings)]
 use tonic::{transport::Server, Request, Response, Status};
 
 //
@@ -72,7 +73,7 @@ impl Echo for EchoService {
 //      127.0.0.1:6000 \
 //      echo.Echo/saySomething
 //
-#[async_std::main]
+#[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // gPRC listent address
     let address = "0.0.0.0:6000".parse()?;
