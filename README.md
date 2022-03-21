@@ -27,7 +27,14 @@
     - How to run gRPC server
 
         ```bash
-        cargo watch -c --exec "run --bin echo"
+        # `-vv` enables the print log in `build.rs`:
+        #
+        # [grpc-demo 0.1.0]
+        # [grpc-demo 0.1.0] >>> Ready to compile proto files ......
+        # [grpc-demo 0.1.0] >>> Generated proto implementation into: "/Users/wison/Rust/grpc-demo/target/debug/build/grpc-demo-2548ecf5e05cd679/out"
+        # [grpc-demo 0.1.0] >>> Compile proto files [ DONE ].
+        # [grpc-demo 0.1.0]
+        cargo watch -c --exec "run --bin echo -vv"
         ```
 
     - How to test

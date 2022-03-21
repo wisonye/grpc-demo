@@ -3,7 +3,7 @@
 /// Rust project.
 ///
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!(">>> Ready to compile proto files......");
+    println!("\n>>> Ready to compile proto files ......");
 
     // let _ = tonic_build::compile_protos("proto/echo.proto")?;
 
@@ -23,7 +23,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         //
         .compile(&["proto/echo/echo.proto"], &["proto"])?;
 
-    println!(">>> Compile proto files [ DONE ].");
+
+    let out_dir = std::env::var("OUT_DIR").unwrap();
+    println!(">>> Generated proto implementation into: {:?}", &out_dir);
+
+    println!(">>> Compile proto files [ DONE ].\n");
 
     Ok(())
 }
