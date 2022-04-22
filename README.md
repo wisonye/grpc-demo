@@ -24,7 +24,7 @@
 
 - Echo service
 
-    - How to run gRPC server
+    - How to run gRPC server demo
 
         ```bash
         # `-vv` enables the print log in `build.rs`:
@@ -50,3 +50,10 @@
 
         </br>
 
+    - How to run gRPC server and client demo
+
+        ```bash
+        cargo watch -c --exec "run --bin echo_with_client_call -vv"
+        ```
+
+    - How to test
